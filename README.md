@@ -139,6 +139,21 @@ What?
 
 ---
 
+### Lesson 4
+Common structure of a test, the **test block** (what we are testing, the body of the test code)
+- render a component that we are going to test
+- find elements we want to interact with (arrange)
+- interact with those elements (act)
+- assert that the results are as expected (assert)
+
+```js
+test('renders learn react link', () => {                  // description, body
+  render(<App />);                                        // body, render the component
+  const linkElement = screen.getByText(/learn react/i);   // body, find elements
+  expect(linkElement).toBeInTheDocument();                // body, assert that the results are as expected
+});
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
