@@ -53,11 +53,19 @@ Different types of functional testing:
 - **System Testing**
 
 ###### 2.1.1. Unit Testing
-What?
+What is testing?
 - A unit is _usually_ defined as **a single testable function/component of a software/app**
 
 What isn't?
 - dealing with the env or exyeternal systems to the codebase (e.g., database)
+
+What to test?
+
+In general, your tests should cover the following aspects of your code:
+
+- If a component renders with or without props
+- How a component renders with state changes
+- How a component reacts to user interactions
 
 When?
 - Run them automatically (i.e., attach tests to `git commit` hook w/ Husky)
@@ -80,6 +88,7 @@ How?
   - Mock real(ish) data in the test scope
 - Write deterministic (i.e., repeatable) tests: it should pass or fail. It should provide the same output for the same input all the time (e.g., the time of day shouldn't affect the day). It shouldn't have random input (unless the function which is tested is for that purpose)
 - Use descriptive (usually long) names
+- Use mock functions when necessary (i.e., when making API calls)
 - Use "precise assertions" that the testing library/framework offers
 E.g.:
 
@@ -101,7 +110,6 @@ Expected: "John Doe"
 Received: "JohnDoe"
 ```
 - Ensure compliance with industry standards (e.g., HIPAA or PCI-DSS)
-
 
 ###### 2.1.2. Integration Testing
 What + How?
@@ -186,7 +194,7 @@ describe('Todo component', () => {
 ### Lesson 10
 Learn about `fireEvent` and triggering events (e.g., entering input, clicking a button)
 
-### Lesson 11
+### Lesson 11
 add a few **integration tests** (performing different unit tests together and seeing how they interact with each other under one `it(...)` test)
 
 ### Lesson 12
@@ -322,6 +330,7 @@ describe('Scoped / Nested block', () => {
 // top afterAll
 ```
 
+### END
 
 ---
 
