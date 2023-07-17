@@ -175,6 +175,8 @@ Learn and perform more assertions
 ### Lesson 10
 Learn about `fireEvent` and triggering events (e.g., entering input, clicking a button)
 
+### Lesson 11
+add a few **integration tests**
 ---
 
 ## Available Scripts
