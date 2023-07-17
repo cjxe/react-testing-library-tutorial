@@ -252,7 +252,7 @@ jest.mock("axios"); // 🚨 import it here!
 // the mocked function and imports it automatically, but sometimes
 // its good to be explicit
 
-describe('FollowersList', () => {
+describe('FollowersList component', () => {
   it('should render one follower item', async () => {
     render(<MockFollowersList />);
     // there is a period of time where an element 
@@ -261,6 +261,7 @@ describe('FollowersList', () => {
     screen.debug();
     expect(followerListElement).toBeInTheDocument();
   });
+  
 
   // it('should render multiple follower items', async () => {
   //   render(<MockFollowersList />);
@@ -289,6 +290,38 @@ describe('FollowersList', () => {
   },
 }
 ```
+
+### Lesson 14
+Running functions before all or each test, or after all or each test
+
+```js
+beforeAll(() => console.log('top beforeAll'));
+afterAll(() => console.log('top afterAll'));
+beforeEach(() => console.log('top beforeEach'));
+afterEach(() => console.log('top afterEach'));
+test('', () => console.log('top test'));
+describe('Scoped / Nested block', () => {
+  beforeAll(() => console.log('sublevel beforeAll'));
+  afterAll(() => console.log('sublevel afterAll'));
+  beforeEach(() => console.log('sublevel beforeEach'));
+  afterEach(() => console.log('sublevel afterEach'));
+  test('', () => console.log('sublevel test'));
+});
+
+// top beforeAll
+// top beforeEach
+// top test
+// top afterEach
+// sublevel beforeAll
+// top beforeEach
+// sublevel beforeEach
+// sublevel test
+// sublevel afterEach
+// top afterEach
+// sublevel afterAll
+// top afterAll
+```
+
 
 ---
 
