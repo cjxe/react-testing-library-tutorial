@@ -165,6 +165,10 @@ When?
 ### Lesson 7
 Perform query operations on the [\<Header\>](./src/components/Header/) component
 
+### Lesson 8
+Learn and perform more assertions
+- 💡 use 1 assertion (i.e., `except(...)`) per unit test
+
 ---
 
 ## Available Scripts
