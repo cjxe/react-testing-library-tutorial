@@ -13,6 +13,132 @@ Why test?
 
 ---
 
+### Lesson 3
+#### Types of tests
+[source](https://www.javatpoint.com/types-of-software-testing)
+![types-of-software-testing](./docs/types-of-software-testing.png)
+
+##### Classification of Manual Testing
+- **White Box Testing**
+- **Black Box Testing**
+- **Grey Box Testing**
+
+###### 1. White Box Testing
+![white box testing](./docs/white-box-testing.png)
+What + How?
+- The developer will **inspect every line of code**
+
+When?
+- before handing it over to the testing team or the concerned test engineers.
+
+Why?
+- Emphasize the **flow of inputs and outputs** over the software and enhance the security of an application.
+
+###### 2. Black Box Testing
+![black box testing](./docs/black-box-testing.png)
+What + How?
+- In this testing, the test engineer will analyze the software against requirements, identify the defects or bug, and sends it back to the development team.
+
+Why?
+- To check the functionality of an application as per the customer requirement. The source code is not visible in this testing; that's why it is known as black-box testing.
+
+###### 2.1. Functional (Component) Testing
+What?
+- The test engineer will check all the components systematically against requirement specifications is known as functional testing.
+
+How?
+- All the components are tested by giving the value, defining the output, and validating the actual output with the expected value.
+
+Different types of functional testing:
+- **Unit Testing**
+- **Integration Testing**
+- **System Testing**
+
+###### 2.1.1. Unit Testing
+What?
+- A unit is _usually_ defined as **a single testable function/component of a software/app**
+
+What isn't?
+- dealing with the env or exyeternal systems to the codebase (e.g., database)
+
+When?
+- Run them automatically (i.e., attach tests to `git commit` hook w/ Husky)
+- Before starting to code the component (TDD)
+- A bug occurs, before fixing bugs
+- Checking for security vulnerabilities
+
+How?
+- Test a single function
+- Follow one AAA for each unit test
+  - **Arrange**: Set the input for a set of variables and the output of these variables after going through a function 
+  - **Act**: Invoke the test and store its result
+  - **Assert**: Check if "act step" is correct
+- Keep them short (a few lines)
+- Test edge cases
+  - There are tools to help with code coverage
+  - Don't aim for 100% test coverage
+- Test both positive/expected and negative/unexpected scenarios
+- Keep them stateless: Tests shouldn't change anything outside their scope (i.e., change variables in other tests)
+  - Mock real(ish) data in the test scope
+- Write deterministic (i.e., repeatable) tests: it should pass or fail. It should provide the same output for the same input all the time (e.g., the time of day shouldn't affect the day). It shouldn't have random input (unless the function which is tested is for that purpose)
+- Use descriptive (usually long) names
+- Use "precise assertions" that the testing library/framework offers
+E.g.:
+
+option 1:
+```js
+expect(result === expected).toBeTruthy();
+// it just fails
+```
+option 2:
+```js
+expect(received).toBeTruthy()
+Received: false
+```
+option 3:
+```js
+expect(received).toBe(expected); // Object.is equality
+
+Expected: "John Doe"
+Received: "JohnDoe"
+```
+- Ensure compliance with industry standards (e.g., HIPAA or PCI-DSS)
+
+
+###### 2.1.2. Integration Testing
+What + How?
+- The test engineer will test **the data flow between dependent modules** or interface between two features/components is called integration testing.
+
+Types of Integration Testing
+
+- Incremental Testing: Whenever there is a clear relationship between modules
+- Non-Incremental Testing: Whenever the data flow is complex and very difficult to classify a parent and a child
+
+###### 2.1.3. System (End-to-End) Testing
+What + How?
+- The test environment is parallel to the production environment. The test engineer will undergo each attribute of the software and test if the end feature works according to the business requirement. 
+
+###### 2.2 Non-function testing
+Why?
+- It provides detailed information on software product performance and used technologies.
+- Help us minimize the risk of production and related costs of the software.
+
+Types of Non-functional Testing
+
+- **2.2.1 Performance Testing**
+  - **Load testing**: Apply some load on the particulat app to check the apps performance. Helps us detect bottlenecks
+  - **Stress testing**: Analyse the user-friendliness and robustness of the software beyond the common functional limits. 
+  - **Scalability testing**: Analyse the apps performance by enhancing or reducing the load in particular balances is known as scalability testing.
+  - **Stability testing**: Evaluate the app's performance by applying the load for a precise time.
+- **2.2.2. Usability Testing**: Analyse the user-friendliness of an application and detect the bugs in the software's end-user interface.
+- **2.2.3. Compatibility Testing**: Here, software means we can test the application on the different operating systems and other browsers, and hardware means we can test the application on different sizes.
+
+###### 3. Grey Box Testing
+What?
+- If a single-person team done both white box and black-box testing, it is considered grey box testing.
+
+---
+
 ## Available Scripts
 
 In the project directory, you can run:
