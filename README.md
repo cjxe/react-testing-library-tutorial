@@ -169,6 +169,8 @@ Perform query operations on the [\<Header\>](./src/components/Header/) component
 Learn and perform more assertions
 - 💡 use 1 assertion (i.e., `except(...)`) per unit test
 
+### Lesson 9
+`describe(...)` is used to organise tests by grouping some under one description
 ---
 
 ## Available Scripts

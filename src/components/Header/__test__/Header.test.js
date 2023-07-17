@@ -3,11 +3,13 @@ import Header from '../Header';
 
 // # Get by
 
-it('should get same text passed into title group', () => {
-  render(<Header title="My Header"/>);
-  const headingElement = screen.getByText(/my header/i);
-  expect(headingElement).toBeInTheDocument();
-});
+describe('Header', () => {
+  it('should get same text passed into title group', () => {
+    render(<Header title="My Header"/>);
+    const headingElement = screen.getByText(/my header/i);
+    expect(headingElement).toBeInTheDocument();
+  });
+})
 
 // it('should get the header "My Header" out of all the other headers', () => {
 //   render(<Header title="My Header"/>);

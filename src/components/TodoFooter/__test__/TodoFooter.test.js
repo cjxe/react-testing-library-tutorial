@@ -13,32 +13,36 @@ const MockTodoFooter = ( {numberOfIncompleteTasks} ) => {
   )
 }
 
-it('should render the correct amount of multiple incomplete tasks', () => {
-  render(<MockTodoFooter numberOfIncompleteTasks={5}/>);
-  const paragraphElement = screen.getByText(/5 tasks left/i);
-  expect(paragraphElement).toBeInTheDocument();
-});
+describe('TodoFotter', () => {
+  it('should render the correct amount of multiple incomplete tasks', () => {
+    render(<MockTodoFooter numberOfIncompleteTasks={5}/>);
+    const paragraphElement = screen.getByText(/5 tasks left/i);
+    expect(paragraphElement).toBeInTheDocument();
+  });
+  
+  it('should render the correct amount of one incomplete task', () => {
+    render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
+    const paragraphElement = screen.getByText(/1 task left/i);
+    expect(paragraphElement).toBeInTheDocument();
+  });
+  
+  it('should render the correct amount of one incomplete task .', () => {
+    render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
+    const paragraphElement = screen.getByText(/1 task left/i);
+    expect(paragraphElement).not.toBeFalsy();
+  });
+  
+  it('should render AND see the correct amount of one incomplete task', () => {
+    render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
+    const paragraphElement = screen.getByText(/1 task left/i);
+    expect(paragraphElement).toBeVisible();
+  });
+  
+  it('should render AND contain <p>', () => {
+    render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
+    const paragraphElement = screen.getByText(/1 task left/i);
+    expect(paragraphElement).toContainHTML("p");
+  });
+})
 
-it('should render the correct amount of one incomplete task', () => {
-  render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
-  const paragraphElement = screen.getByText(/1 task left/i);
-  expect(paragraphElement).toBeInTheDocument();
-});
 
-it('should render the correct amount of one incomplete task .', () => {
-  render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
-  const paragraphElement = screen.getByText(/1 task left/i);
-  expect(paragraphElement).not.toBeFalsy();
-});
-
-it('should render AND see the correct amount of one incomplete task', () => {
-  render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
-  const paragraphElement = screen.getByText(/1 task left/i);
-  expect(paragraphElement).toBeVisible();
-});
-
-it('should render AND contain <p>', () => {
-  render(<MockTodoFooter numberOfIncompleteTasks={1}/>);
-  const paragraphElement = screen.getByText(/1 task left/i);
-  expect(paragraphElement).toContainHTML("p");
-});
