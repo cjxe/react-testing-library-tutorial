@@ -150,11 +150,11 @@ test('renders learn react link', () => {                  // description, body
 });
 ```
 
-### Lesson 5 
+### Lesson 5
 #### Query methods
 ![query methods](./docs/query-methods.png)
 
-### Lesson 6
+### Lesson 6
 #### Priorities
 
 When?
@@ -162,6 +162,8 @@ When?
 
 ![query priorities](./docs/query-priorities.png)
 
+### Lesson 7
+Perform query operations on the [\<Header\>](./src/components/Header/) component
 
 ---
 
