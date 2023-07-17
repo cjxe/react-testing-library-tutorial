@@ -171,6 +171,10 @@ Learn and perform more assertions
 
 ### Lesson 9
 `describe(...)` is used to organise tests by grouping some under one description
+
+### Lesson 10
+Learn about `fireEvent` and triggering events (e.g., entering input, clicking a button)
+
 ---
 
 ## Available Scripts
