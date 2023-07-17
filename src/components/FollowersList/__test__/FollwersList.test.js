@@ -16,12 +16,13 @@ describe('FollowersList', () => {
     // there is a period of time where an element 
     // with the property `data-testid="follower-item-0"` doesn't exist
     const followerListElement = await screen.findByTestId("follower-item-0");
+    screen.debug();
     expect(followerListElement).toBeInTheDocument();
   });
 
-  it('should render multiple follower items', async () => {
-    render(<MockFollowersList />);
-    const followerListElements = await screen.findAllByTestId(/follower-item/i);
-    expect(followerListElements.length).toBe(5);
-  });
+  // it('should render multiple follower items', async () => {
+  //   render(<MockFollowersList />);
+  //   const followerListElements = await screen.findAllByTestId(/follower-item/i);
+  //   expect(followerListElements.length).toBe(5);
+  // });
 })

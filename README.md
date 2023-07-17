@@ -171,15 +171,87 @@ Learn and perform more assertions
 
 ### Lesson 9
 `describe(...)` is used to organise tests by grouping some under one description
+```js
+describe('Todo component', () => {
+  it('should render', () => {
+    // ...
+  });
+
+  it ('is visible', () => {
+    // ...
+  });
+});
+```
 
 ### Lesson 10
 Learn about `fireEvent` and triggering events (e.g., entering input, clicking a button)
 
 ### Lesson 11
-add a few **integration tests**
+add a few **integration tests** (performing different unit tests together and seeing how they interact with each other under one `it(...)` test)
 
 ### Lesson 12
 find async elements with `findBy`
+
+### Lesson 13
+When making requests in a test, avoid using the real API. 
+
+Why?
+- real API costs money
+- they are slow
+- our tests are dependent on external functions
+
+Solution?
+- mock the API
+
+How?
+1- create a new directory: `src/__mocks__`
+2- Create the function that you want to mock
+3- Mock the response
+4- Export the function
+```js
+// 📁 /src/__mocks__/axios.js
+const mockResponse = {
+  data: {
+    results: [
+      {
+        name: {
+          first: "Lui",
+          last: "Mario"
+        },
+        picture: {
+          large: "https://randomuser.me/api/portraits/men/62.jpg"
+        },
+        login: {
+          username: "purplepanda830"
+        }
+      }
+    ]
+  }
+}
+
+export default {
+  get: jest.fn().mockResolvedValue(mockResponse)
+}
+``` 
+
+💡 After every test, the mock state does NOT get reset. We want it to get reset so we add this line to out config file (i.e., `package.json`)
+```js
+{
+  // ...
+  "dependencies": {
+    // ...
+  },
+  "scripts": {
+    // ...
+  },
+  "eslintConfig": {
+    // ...
+  },
+  "jest": {
+    "resetMocks": false
+  },
+}
+```
 
 ---
 
