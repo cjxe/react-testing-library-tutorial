@@ -154,6 +154,15 @@ test('renders learn react link', () => {                  // description, body
 #### Query methods
 ![query methods](./docs/query-methods.png)
 
+### Lesson 6
+#### Priorities
+
+When?
+- Which `screen.<method>` should be utilising (i.e., prioritising)?
+
+![query priorities](./docs/query-priorities.png)
+
+
 ---
 
 ## Available Scripts
