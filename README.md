@@ -208,6 +208,7 @@ How?
 2- Create the function that you want to mock
 3- Mock the response
 4- Export the function
+5- import the mock function to the file where its used
 ```js
 // 📁 /src/__mocks__/axios.js
 const mockResponse = {
@@ -233,6 +234,42 @@ export default {
   get: jest.fn().mockResolvedValue(mockResponse)
 }
 ``` 
+```js
+import { render, screen } from '@testing-library/react';
+import FollowersList from '../FollowersList';
+import { BrowserRouter } from 'react-router-dom';
+
+const MockFollowersList = () => {
+  return (
+    <BrowserRouter>
+      <FollowersList />
+    </BrowserRouter>
+  )
+}
+
+jest.mock("axios"); // 🚨 import it here!
+// note: it works even if we don't import it since jest detects
+// the mocked function and imports it automatically, but sometimes
+// its good to be explicit
+
+describe('FollowersList', () => {
+  it('should render one follower item', async () => {
+    render(<MockFollowersList />);
+    // there is a period of time where an element 
+    // with the property `data-testid="follower-item-0"` doesn't exist
+    const followerListElement = await screen.findByTestId("follower-item-0");
+    screen.debug();
+    expect(followerListElement).toBeInTheDocument();
+  });
+
+  // it('should render multiple follower items', async () => {
+  //   render(<MockFollowersList />);
+  //   const followerListElements = await screen.findAllByTestId(/follower-item/i);
+  //   expect(followerListElements.length).toBe(5);
+  // });
+})
+
+```
 
 💡 After every test, the mock state does NOT get reset. We want it to get reset so we add this line to out config file (i.e., `package.json`)
 ```js

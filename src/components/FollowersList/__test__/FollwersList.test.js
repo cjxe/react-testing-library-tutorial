@@ -10,6 +10,8 @@ const MockFollowersList = () => {
   )
 }
 
+jest.mock("axios");
+
 describe('FollowersList', () => {
   it('should render one follower item', async () => {
     render(<MockFollowersList />);
