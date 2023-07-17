@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Lessons
+
+### Lesson 2
+Why test?
+- Catch bugs in the updated code
+  - Increases your confidence in the app
+- Speeds up QA time
+- Can serve as documentation
+
+---
+
 ## Available Scripts
 
 In the project directory, you can run:
