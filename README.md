@@ -11,8 +11,6 @@ Why test?
 - Speeds up QA time
 - Can serve as documentation
 
----
-
 ### Lesson 3
 #### Types of tests
 [source](https://www.javatpoint.com/types-of-software-testing)
@@ -137,14 +135,12 @@ Types of Non-functional Testing
 What?
 - If a single-person team done both white box and black-box testing, it is considered grey box testing.
 
----
-
 ### Lesson 4
 Common structure of a test, the **test block** (what we are testing, the body of the test code)
 - render a component that we are going to test
-- find elements we want to interact with (arrange)
-- interact with those elements (act)
-- assert that the results are as expected (assert)
+- find elements we want to interact with *(arrange)*
+- interact with those elements *(act)*
+- assert that the results are as expected *(assert)*
 
 ```js
 test('renders learn react link', () => {                  // description, body
@@ -153,6 +149,12 @@ test('renders learn react link', () => {                  // description, body
   expect(linkElement).toBeInTheDocument();                // body, assert that the results are as expected
 });
 ```
+
+### Lesson 5 
+#### Query methods
+![query methods](./docs/query-methods.png)
+
+---
 
 ## Available Scripts
 
