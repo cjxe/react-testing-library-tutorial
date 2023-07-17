@@ -177,6 +177,10 @@ Learn about `fireEvent` and triggering events (e.g., entering input, clicking a 
 
 ### Lesson 11
 add a few **integration tests**
+
+### Lesson 12
+find async elements with `findBy`
+
 ---
 
 ## Available Scripts
